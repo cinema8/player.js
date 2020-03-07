@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">  
+  <title>Cinema8 JS Api Demo</title>
+
+  <!-- Cinema8 Api -->
+  <script type="text/javascript" src="cinema8.player.api.min.js"> </script>
+</head>
+<body>
+
+  <div id="video"></div>
+  
+  
+  <script>
+   var player = new Cinema8Player("#video", {
+    id: "VX3R2lD4",
+    externalUser: {
+        name: "John",
+        surname: "Doe",
+        email: "john.doe@gmail.com",
+        reference: "111-222-333"
+    },
+    onready: function(){
+        console.log("onready fired");
+    },
+    onplay: function(){
+       console.log("onplay fired");
+    },
+    onpause: function(){
+        console.log("onpause fired");
+    },
+    onprogress: function(){
+        console.log("onprogress fired");
+    },
+    onend: function(){
+        console.log("onend fired");
+    },
+    oncustomcallback: function(param){
+    	console.log(param);
+    }
+});
+
+  </script>
+</body>
+</html>
